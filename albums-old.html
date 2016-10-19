@@ -1,0 +1,22 @@
+<div class="row">
+<% for ( var i = 0; i < albums.length; i++ ) {
+    album = albums[i];
+    if (i > 0 && i % 3 == 0) {%>
+</div>
+<div class="row">
+    <% } %>
+<div class="col-sm-12 col-md-4">
+    <a href="#" onclick='loadAlbum(<%=JSON.stringify(album)%>); return false;'>
+        <div class="thumbnail thumbnail-animate">
+            <img src="<%=album.dir%>/<%=album.pics[0]%>" alt="<%=album.name%>">
+            <div class="banner"><%=album.pics.length%></div>
+            <div class="caption">
+                <h3><%=album.name%></h3>
+                <p><%=album.date%> - <%=album.location%></p>
+                <p><%=album.description%></p>
+            </div>
+        </div>
+    </a>
+</div>
+<% } %>
+</div>

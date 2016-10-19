@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="pongstagram/pongstagr.am.css">
+<div id="profile"></div>
+<div id="feed"></div>
+<script>
+$(document).ready(function () {
+    $("#feed").pongstgrm({
+        accessId: '1380690391',
+        accessToken: '1380690391.5418e50.21308c44c2e34aa080f5486afafc0ab0'
+    });
+    
+    $("#profile").pongstgrm({
+        accessId: '1380690391',
+        accessToken: '1380690391.5418e50.21308c44c2e34aa080f5486afafc0ab0',
+        show:             'profile',
+        picture_size:     '128',                  /* sets profile picture to 64x64 pixels, no need to add px */
+        profile_bg_color: '#ffffff'              /* background color */
+    });
+});
+</script>

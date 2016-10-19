@@ -1,0 +1,33 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <% for ( var i = 0; i < albums.length && i < 5; i++ ) { 
+            album = albums[i]; 
+            className = i == 0 ? "active" : ""; %>
+        <li data-target="#myCarousel" data-slide-to="<%=i%>" class="<%=className%>"></li>
+        <% } %>
+    </ol>
+    
+    <div class="carousel-inner">
+        <% for ( var i = 0; i < albums.length && i < 5; i++ ) { 
+            album = albums[i];
+            className = i == 0 ? "active" : ""; %>
+        <div class="item <%=className%>"> <img src="<%=album.dir%>/<%=album.pics[0]%>" style="width:100%" data-src="holder.js/900x500/auto/#7cbf00:#fff/text: " alt="<%=album.name%>">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1> <%=album.name%> </h1>
+                    <p> <%=album.date%> - <%=album.location%> </p>
+                    <button type="button" class="btn btn-primary" onclick='loadAlbum(<%=JSON.stringify(album)%>); return false;'><%=album.pics.length - 1%> meer</button>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+    
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+     
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
